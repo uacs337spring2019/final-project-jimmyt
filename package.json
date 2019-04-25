@@ -1,0 +1,24 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "jimmyProject.js",
+  "scripts": {
+    "test": "hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uacs337spring2019/final-project-jimmyt.git"
+  },
+  "keywords": [
+    "jimmy",
+    "final",
+    "project"
+  ],
+  "author": "Jimmy Toler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uacs337spring2019/final-project-jimmyt/issues"
+  },
+  "homepage": "https://github.com/uacs337spring2019/final-project-jimmyt#readme"
+}
