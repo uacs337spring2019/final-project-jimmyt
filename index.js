@@ -45,7 +45,7 @@
 		visited = [];
 		findRouteLength(originSel, destinationSel, 0);
 		visited = [];
-		document.getElementById("ticket").innerHTML = "Total ammount $"+ prevtotal+ "<br/> length (minutes) "+ prevtotalLength;
+		document.getElementById("ticket").innerHTML = "Total amount $"+ prevtotal+ "<br/> length: "+ prevtotalLength+" minutes";
 	}
 	function sellTicket(){
 		document.getElementById("adminScreen").style.display = "none";
