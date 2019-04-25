@@ -109,6 +109,16 @@
 		addRoute(destination, origin, price, time);
 		addRoute(origin, destination, price, time);
 		createRoute();
+		const jsonMessage = {name: parseNode(nodes)};
+		const fetchOptions = {
+			method : 'POST',
+			headers : {
+				'Accept': 'application/json',
+				'Content-Type' : 'application/json'
+			},
+
+			body : JSON.stringify(jsonMessage)
+		};
 
 		let url = "http://localhost:process.env.PORT";
 		fetch(url, fetchOptions)
@@ -210,6 +220,13 @@
 		}
 		return false;
 	}
+	function checkStatus(response) {
+				if (response.status >= 200 && response.status < 300) {
+						return response.text();
+				} else {
+						return Promise.reject(new Error(response.status+": "+response.statusText));
+				}
+		}
 		function parseNode(arr){
   		var rv = {};
   		for (var i = 0; i < arr.length; ++i)

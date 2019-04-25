@@ -4,7 +4,7 @@
   "description": "final project",
   "main": "jimmyProject.js",
   "scripts": {
-    "test": "hello"
+    "start": "jimmyProject_service.js"
   },
   "repository": {
     "type": "git",
