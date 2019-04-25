@@ -27,7 +27,6 @@ app.post('/', jsonParser, function (req, res) {
 	fs.writeFile("graph.txt", name, function(err) {
     	if(err) {
 			res.send("failed to append");
-			res.status(400);
     	}
       console.log("Success! written");
     	res.send("Success! written");
@@ -61,4 +60,4 @@ app.get('/', function (req, res) {
   return res.send(JSON.stringify(getMessages()));
 })
 
-app.listen(3000);
+app.listen(process.env.PORT);
