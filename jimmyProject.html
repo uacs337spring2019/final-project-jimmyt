@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+    <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="jimmyProject.css" />
+		<script src="jimmyProject.js"></script>
+		<title>Ticket Seller</title>
+	</head>
+	<body>
+    <button type="button" id = "press">Home</button>
+    <div id= "loginScreen">
+        Username: <input type="text" name="Username" id = "user"> <br>
+        Password:  <input type="text" name="Username" id = "password"><br>
+        <button type="button" id = "enter">Enter</button>
+    </div>
+    <div id="adminScreen">
+      <button type="button" id = "Sell">Sell Tickets</button>
+      <button type="button" id = "createRoute">Create Route</button>
+
+      </div>
+        <div id= "routeScreen">
+            Destination: <input type="text" name="destination" id = "destination"> <br>
+            Price: <input type="text" name="price" id = "price"> <br>
+            Travel Time:  <input type="text" name="time" id = "time"><br>
+            From: <select name="Type" id="nodes">
+              </select><br>
+            <button type="button" id = "cRoute">Create</button>
+        </div>
+          <div id ="sellMenu">
+            Origin:<select name="Type" id="sellOrigin">
+            </select></br>
+            Destination:<select name="Type" id="sellDestination">
+            </select></br>
+            Ticket:<div id = "ticket">
+              </div>
+            <button type="button" id = "preview">preview</button>
+
+          </div>
+	</body>
+</html>
