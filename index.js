@@ -23,6 +23,7 @@
 	var destinationSel;
 	var prevtotal = 0;
 	var prevtotalLength= 0;
+	var currRoute =[];
 	window.onload = function() {
 
 		document.getElementById("loginScreen").style.display = "none";
@@ -41,11 +42,17 @@
 		originSel = selo.options[selo.selectedIndex].value;
 		let seld = document.getElementById("sellDestination");
 		destinationSel = seld.options[seld.selectedIndex].value;
+		currRoute = [];
 		findRoute(originSel, destinationSel, 0);
 		visited = [];
 		findRouteLength(originSel, destinationSel, 0);
 		visited = [];
 		document.getElementById("ticket").innerHTML = "Total amount $"+ prevtotal+ "<br/> length: "+ prevtotalLength+" minutes";
+		document.getElementById("ticket").innerHTML += "<br/>Route:<br/>";
+		let i = 0;
+		for (i = 0; i<currRoute.length; i++){
+			document.getElementById("ticket").innerHTML += currRoute[i]+"<br/>";
+		}
 	}
 	function sellTicket(){
 		document.getElementById("adminScreen").style.display = "none";
@@ -149,6 +156,9 @@
 			}
 	}
 	function findRoute(curr, destination, total){
+		if (!visitednode(curr)){
+			currRoute.push(curr);
+		}
 		visited.push(curr);
 		if (curr == destination){
 			prevtotal = total;
@@ -172,11 +182,10 @@
 		for (j = 0; j<neighboors.length; j++){
 			var visitedroute = visitednode(neighboors[j][0]);
 			if (visitedroute == false){
-				if (findRoute(neighboors[j][0], destination, total+(neighboors[j][1])) == 0){
-					continue;
+					return findRoute(neighboors[j][0], destination, total+neighboors[j][1]);
 				}
 			}
-		}
+		currRoute.pop();
 		return 0;
 	}
 	function findRouteLength(curr, destination, total){
